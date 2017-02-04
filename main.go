@@ -10,6 +10,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
 	"net/http"
 	"path/filepath"
@@ -18,7 +19,7 @@ import (
 )
 
 // VERSION is the version
-const VERSION = "0.0.1"
+const VERSION = "0.0.2"
 
 func main() {
 	port := flag.String("p", "8100", "port to serve on")
@@ -27,9 +28,16 @@ func main() {
 
 	http.Handle("/", http.FileServer(http.Dir(*directory)))
 	go func() {
-		open.Run(filepath.Join(*directory, "index.html"))
+		open.Run(fmt.Sprintf("http://localhost:%s", *port))
 	}()
+
+	dirpath, err := filepath.Abs(*directory)
+
+	if err != nil {
+		log.Fatalf("could not find directory at %s", *directory)
+	}
+
 	log.Printf("gss version: %s", VERSION)
-	log.Printf("Serving %s on HTTP port: %s\n", *directory, *port)
+	log.Printf("Serving %s \non HTTP port: %s\n", dirpath, *port)
 	log.Fatal(http.ListenAndServe(":"+*port, nil))
 }
