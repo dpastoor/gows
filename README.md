@@ -9,6 +9,12 @@ you want to serve and run
 gss
 ```
 
+can also specify the relative or absolute path to the directory you want to serve:
+
+```
+gss -d="./docs"
+```
+
 ## Build 
 
 on windows (powershell)
