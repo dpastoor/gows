@@ -21,7 +21,7 @@ import (
 )
 
 // VERSION is the version
-const VERSION = "1.0.0"
+const VERSION = "1.0.1"
 
 func main() {
 	port := flag.String("p", "8100", "port to serve on")
