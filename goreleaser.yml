@@ -1,0 +1,11 @@
+# goreleaser.yml
+# Build customization
+build:
+  binary: drum-roll
+  goos:
+    - windows
+    - darwin
+    - linux
+  goarch:
+    - amd64
+    
