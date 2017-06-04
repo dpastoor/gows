@@ -1,5 +1,5 @@
 /*
-gss is a very simple static file server in go
+gows is a very simple static file server in go
 Usage:
 	-p="8100": port to serve on
 	-d=".":    the directory of static files to host
@@ -21,7 +21,7 @@ import (
 )
 
 // VERSION is the version
-const VERSION = "1.0.1"
+const VERSION = "1.0.2"
 
 func main() {
 	port := flag.String("p", "8100", "port to serve on")

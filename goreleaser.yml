@@ -1,7 +1,7 @@
 # goreleaser.yml
 # Build customization
 build:
-  binary: gss
+  binary: gows
   goos:
     - windows
     - darwin
@@ -9,6 +9,13 @@ build:
   goarch:
     - amd64
 
-format_overrides:
-  - goos: windows
-    format: zip
+# goreleaser.yml
+brew:
+  # Reporitory to push the tap to.
+  github:
+    owner: dpastoor 
+    name: dpastoor/gows 
+
+  # Folder inside the repository to put the formula.
+  # Default is the root folder.
+  folder: Formula
