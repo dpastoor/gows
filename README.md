@@ -6,13 +6,13 @@ Add the executable to a directory in your path, renaming it to gss, then to use,
 you want to serve and run
 
 ```
-gss
+gows
 ```
 
 can also specify the relative or absolute path to the directory you want to serve:
 
 ```
-gss -d="./docs"
+gows -d="./docs"
 ```
 
 ## Build 
